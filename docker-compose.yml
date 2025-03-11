@@ -1,8 +1,0 @@
-version: '3'
-services:
-  github-analysis:
-    build: .
-    stdin_open: true
-    tty: true
-    entrypoint: ["/app/entrypoint.sh"]  # Ensures arguments are passed correctly
-
