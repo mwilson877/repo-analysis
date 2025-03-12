@@ -49,7 +49,7 @@ This tool analyzes GitHub repositories for potential supply chain compromises us
 ### Running Natively
 Run the main script with the required arguments:
 ```bash
-python github_analysis.py --repo <owner/repo> [--api-key YOUR_API_KEY] [--days number] [-v] [-w] [-h]
+python github_analysis.py --repo <owner/repo> [--api-key YOUR_API_KEY] [-d, --days number] [-v, --verbose] [-w, --write] [-h, --help]
 ```
 - ```--repo```: **(Required)** GitHub repository in the format ```owner/repo``` (e.g., ```psf/requests```).
 - ```--api-key```: **(Optional)** GitHub API key for increased rate limits.
