@@ -53,7 +53,7 @@ python github_analysis.py --repo <owner/repo> [--api-key YOUR_API_KEY] [--days n
 ```
 - ```--repo```: **(Required)** GitHub repository in the format ```owner/repo``` (e.g., ```psf/requests```).
 - ```--api-key```: **(Optional)** GitHub API key for increased rate limits.
-- ```--days```: **(Optional)** Number of days to look back (default: 90).
+- ```-d, --days```: **(Optional)** Number of days to look back (default: 90).
 - ```-v, --verbose```: **(Optional)** Show full output (verbose mode).
 - ```-w, --write```: **(Optional)** Write JSON output files to disk.
 - ```-h, --help```: **(Optional)** Show help message and exit.
