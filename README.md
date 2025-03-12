@@ -1,6 +1,8 @@
 # GitHub Supply Chain Analysis Tool
 
-This tool analyzes GitHub repositories for potential supply chain compromises using a multi-phase pipeline. **Note:** The analysis is currently optimized for Python repositories only.
+This tool analyzes GitHub repositories for potential supply chain compromises using a multi-phase pipeline. 
+
+**Note:** The analysis is currently optimized for Python repositories only.
 
 ## Features
 
@@ -16,7 +18,7 @@ This tool analyzes GitHub repositories for potential supply chain compromises us
 - **Ensemble Integration:**  
   Combines commit message risk, code diff risk, and metadata (author-based risk) into a final risk score for each commit.
 
-  **Dockerized Deployment:**  
+- **Dockerized Deployment:**  
   The tool is containerized using Docker for easy deployment on Linux and Windows (using Linux containers). The Dockerfile pre-downloads required models during the build process to avoid repeated downloads at runtime.
 
 ## Installation
