@@ -17,7 +17,7 @@ This tool analyzes GitHub repositories for potential supply chain compromises us
   Combines commit message risk, code diff risk, and metadata (author-based risk) into a final risk score for each commit.
 
   **Dockerized Deployment:**  
-  The tool is containerized using Docker for easy deployment on Linux and Windows (using Linux containers).
+  The tool is containerized using Docker for easy deployment on Linux and Windows (using Linux containers). The Dockerfile pre-downloads required models during the build process to avoid repeated downloads at runtime.
 
 ## Installation
 
@@ -26,17 +26,21 @@ This tool analyzes GitHub repositories for potential supply chain compromises us
    ```bash
    git clone https://github.com/mwilson877/repo-analysis
    cd repo-analysis
+   ```
 2. **Install Python Dependencies:**
    ```bash
    pip install -r requirements.txt
+   ```
 ### Docker Setup
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/mwilson877/repo-analysis
    cd repo-analysis
+   ```
 2. **Build the Docker Image:**
    ```bash
    docker build -t github-analysis-tool .
+   ```
 
 ## Usage
 
@@ -50,6 +54,7 @@ python github_analysis.py --repo <owner/repo> [--api-key YOUR_API_KEY] [--days n
 - ```--days```: **(Optional)** Number of days to look back (default: 90).
 - ```-v, --verbose```: **(Optional)** Show full output (verbose mode).
 - ```-w, --write```: **(Optional)** Write JSON output files to disk.
+- ```-h, --help```: **(Optional)** Show help message and exit.
 
 **Example:**
   ```bash
@@ -64,8 +69,9 @@ docker run github-analysis-tool --repo psf/requests --days 120
 ## Troubleshooting
 
 - **Performance:**
+  
   Running transformer models on CPU can be slow. For better performance, consider using a GPU-enabled Docker setup. Alteranatively, consider giving your docker setup more CPU cores.
-- 
-
-
-
+  
+- **API Rate Limits:**
+  
+  If you run into GitHub API rate limits, use the ```--api-key``` argument with your github API key. The primary rate limit for unauthenticated requests is 60 requests per hour and 5,000 requests per hour for authenticated users. 
